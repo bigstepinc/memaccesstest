@@ -38,7 +38,7 @@ struct l{
 
 The test can also do random access vs sequencial (essencially invalidating the prefetch mechanism) and multiple threads in parallel. To change these settings one must edit the config.h file. 
  
-A plot from my mac(L1 cache: 32KB 2^15 L2 cache: 256KB 2^18 L3 cache: 3MB 2^20 8GB RAM) shows the difference between different memory access times. The plot shos the power of 2 of the working set size of the X axis and the number of 'cpu' cycles as returned by clock_gettime CLOCK_MONOTONIC_RAW.
+A plot from my mac(L1 cache: 32KB 2^15 L2 cache: 256KB 2^18 L3 cache: 3MB 2^20 8GB RAM) shows the difference between different memory access times PER RECORD. The plot shows the power of 2 of the working set size of the X axis and the number of 'cpu' cycles as returned by clock_gettime CLOCK_MONOTONIC_RAW. The timing before 2^13 should be ignored because of noise and jitter making impossible to measure acurately for working set sizes smaller than that.  
 
 ![Alt text](/img/memaccesstest.png?raw=true "memaccesstest plot")
 
