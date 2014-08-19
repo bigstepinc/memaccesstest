@@ -1,4 +1,4 @@
-*Memaccesstest*
+***Memaccesstest***
 
 **Memory Access Time Benchmark - Test L1, L2,L3, Main memory access times, TLB misses and prefetch effects. - Alfa** 
 
@@ -10,7 +10,17 @@ Provided is a matlab/octave source file to interpret the data.
 
 It measures the time it takes to traverse and/or do additional operations on data stored in a linked list (bi-directional). It does so while gradually increasing the working set size (the total capacity of the list). As it does so, it will eventually start increasing the miss ratios for the L1,L2 and L3 caches with obvious effects on time it takes to access that particular memory. 
 
-The default record size is 64 bytes (2x8 byte pointers+14)
+The default record size is 64 bytes. To change this modify NPAD constant to a different number.
+```
+struct l{
+	struct l *n;
+	struct l *p;
+	long int pad[NPAD-1];
+
+};
+```
+
+
 
 The test can also do random access vs sequencial (essencially invalidating the prefetch mechanism) and multiple threads in parallel. To change these settings one must edit the config.h file. 
  
