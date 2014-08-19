@@ -6,7 +6,20 @@ Version 0.3
 
 This application is a benchmark designed to test the performance of various systems while accessing memory. It outputs data as CSVs so it cannot be used stand-alone, an analysis tool will be required outside of it. It also requires recompilation on the different target machines that are tested and with various settings. 
 
-Provided is a matlab/octave source file to interpret the data. 
+Provided is a matlab/octave source file to interpret the data.
+To compile the code run:
+```
+make
+``` 
+To execute and record the data run:
+```
+./memaccesstest > output.csv
+```
+To interpret the data using **octave**:
+```
+./octave --eval "plot_csv_log('output.csv')"
+```
+
 
 It measures the time it takes to traverse and/or do additional operations on data stored in a linked list (bi-directional). It does so while gradually increasing the working set size (the total capacity of the list). As it does so, it will eventually start increasing the miss ratios for the L1,L2 and L3 caches with obvious effects on time it takes to access that particular memory. 
 
