@@ -1,6 +1,6 @@
 #Memaccesstest
 
-##Memory Access Time Benchmark - Test L1, L2,L3, Main memory access times, TLB misses and prefetch effects. - Alfa 
+*Memory Access Time Benchmark - Test L1, L2,L3, Main memory access times, TLB misses and prefetch effects. - Alfa* 
 
 Version 0.3
 
